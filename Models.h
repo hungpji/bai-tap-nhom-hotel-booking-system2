@@ -31,6 +31,7 @@ public:
 
     Room(int id, string name, string type, double p, string st)
         : roomId(id), roomName(name), roomType(type), price(p), status(st) {}
+    Room() {}
 
     void displayRoom() {
         cout << "| ID: " << roomId << " | " << left << setw(15) << roomName 
@@ -52,7 +53,8 @@ public:
 
     Booking(int id, int rId, int cId, int pId, string in, string out, double t)
         : bookingId(id), roomId(rId), customerId(cId), paymentId(pId), checkIn(in), checkOut(out), total(t), status("Confirmed") {}
-    
+    Booking() {}
+
     void displayBooking() {
         cout << "   -> Ma Book: " << bookingId << " | Phong ID: " << roomId 
              << " | Ngay: " << checkIn << " den " << checkOut 
@@ -71,6 +73,7 @@ public:
 
     Customer(int id, string n, string e, string pass, string p, string addr)
         : customerId(id), name(n), email(e), password(pass), phone(p), address(addr) {}
+    Customer() {}
 };
 
 class Admin {
@@ -82,6 +85,7 @@ public:
 
     Admin(int id, string n, string e, string pass) 
         : adminId(id), name(n), email(e), password(pass) {}
+    Admin() {}
 };
 
 #endif
