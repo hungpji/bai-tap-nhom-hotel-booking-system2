@@ -3,6 +3,7 @@
 
 #include "Models.h"
 #include <vector>
+#include <fstream> 
 
 class HotelSystem {
 private:
@@ -16,13 +17,18 @@ private:
     int nextBookingId;
     int nextPaymentId;
 
+    
+    void saveData();
+    void loadData();
+    void seedData(); 
+
 public:
     int currentUserId;
     string currentUserRole;
     string currentUserName;
 
-    HotelSystem();
-
+    HotelSystem();  
+    ~HotelSystem();
     bool login();
     void registerCustomer();
     void logout();
