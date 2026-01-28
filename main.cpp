@@ -4,7 +4,11 @@
 using namespace std;
 
 int main() {
-    HotelSystem system;
+    // Khoi tao he thong
+    // Khi chay dong nay, no se tu dong load file txt (neu co)
+    // Hoac tao du lieu mau (neu chay lan dau)
+    HotelSystem system; 
+    
     int choice;
 
     while (true) {
@@ -16,7 +20,13 @@ int main() {
             cout << "2. Dang ky tai khoan khach moi" << endl;
             cout << "0. Thoat chuong trinh" << endl;
             cout << "Lua chon: ";
-            cin >> choice;
+            
+            // Fix loi nhap ky tu la bi lap vo tan
+            if (!(cin >> choice)) {
+                cin.clear(); 
+                cin.ignore(1000, '\n'); 
+                choice = -1;
+            }
 
             switch (choice) {
                 case 1:
